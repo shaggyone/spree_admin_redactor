@@ -6,9 +6,9 @@ Gem::Specification.new do |s|
   s.description = s.summary
   s.required_ruby_version = '>= 1.8.7'
 
-  s.author            = 'x@ES'
+  s.author            = 'originally by x@ES fork by shaggyone latter'
   s.email             = 'KEIvanov@gmail.com'
-  s.homepage          = 'https://github.com/x2es/spree_admin_redactor'
+  s.homepage          = 'https://github.com/shaggyone/spree_admin_redactor'
   # s.rubyforge_project = 'actionmailer'
 
   s.files        = Dir['README.rdoc', 'lib/**/*', 'app/**/*']
