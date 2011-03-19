@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_admin_redactor'
-  s.version     = '0.1.0'
-  s.summary     = '[Spree-0.30+] replaces all spree admin textareas by imperavi-redactor 6.1.1+'
+  s.version     = '0.1.1'
+  s.summary     = '[Spree-0.30+] replaces certain textareas at spree administrator inteface with imperavi-redactor 6.1.1+'
   s.description = s.summary
   s.required_ruby_version = '>= 1.8.7'
 
@@ -15,5 +15,8 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency('spree_core', '>= 0.30.1')
+  s.add_dependency 'spree_core', '>= 0.30.1'
+  s.add_dependency 'paperclip',  '>= 2.3.6'
+  s.add_dependency 'haml'
+  s.add_dependency 'will_paginate'
 end

@@ -22,7 +22,9 @@
     $(document).ready(function(){
       $.each($('textarea'), function(index, element){
         $(element).redactor({
-          { focus: true, lang: 'ru' }
+          focus  : true,
+          lang   : 'ru',
+          upload : '<%= url_for :controller=>"admin/imperavi_assets", :action => :create %>' 
         });
       })
     })
