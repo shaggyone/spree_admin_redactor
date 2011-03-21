@@ -15,15 +15,42 @@
 
 <% unless fl_disable %>
 
+  <%= javascript_include_tag 'http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js' %>
   <%= javascript_include_tag '/redactor/redactor' %>
-  <%= stylesheet_link_tag '/redactor/css/redactor' %>
+  <%= javascript_include_tag 'jquery.ui.widget.js', 'jquery.ui.tabs.min.js' %>
 
+  <%= stylesheet_link_tag '/redactor/css/redactor' %>
+  <%= stylesheet_link_tag 'jquery.ui.tabs.css', 'overlay' %>
+  
   <script>
-    $(document).ready(function(){
-      $.each($('textarea'), function(index, element){
+    $(function(){
+//    if ($(document).overlay == undefined) {
+//        $.getScript("http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js");
+//    }
+/*    $('.pagination a').live('click',function (){
+        $.get(this.href, function(html) {
+          $('.imperavi-pagination').replaceWith(html)
+        });
+        return false;  
+      });*/
+      $('.imperavi-pagination .pagination a').live('click',function (){
+        $.get(this.href, function(html) {
+            $('.imperavi-pagination').replaceWith(html)
+        });
+        return false;  
+      });
+      $('.imperavi-pagination a.pick-image').live('click', function() {
+        $(".overlay_trigger").overlay().close();
+        $('#redactor_file_link').val(this.href);
+        return false;
+      });
+
+      $('textarea').each(function(index, element){
         $(element).redactor({
           focus  : true,
           lang   : 'ru',
+          width  : true,
+          height : true,
           upload : '<%= url_for :controller=>"admin/imperavi_assets", :action => :create %>' 
         });
       })
