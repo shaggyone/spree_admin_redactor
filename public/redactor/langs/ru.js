@@ -47,12 +47,14 @@ var RLANG = {
 	delete_table: 'Удалить таблицу',
 	title: 'Подсказка',
 	image_view: 'Скачать изображение',
-	image_position: 'Обтекание текстом',
+	image_position: 'Положение изображения',
 	none: 'нет',
 	left: 'слева',
 	right: 'справа',
 	image_web_link: 'или ссылка на изображение',
 	text: 'Текст',
 	mailto: 'Адрес эл. почты',
-	web: 'Адрес URL'
+	web: 'Адрес URL',
+        upload: 'Загрузить',
+        pick: 'Выбрать'
 };
