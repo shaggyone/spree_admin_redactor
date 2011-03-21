@@ -47,7 +47,7 @@ var RLANG = {
 	delete_table: 'Удалить таблицу',
 	title: 'Подсказка',
 	image_view: 'Скачать изображение',
-	image_position: 'Положение изображения',
+	image_position: 'Положение',
 	none: 'нет',
 	left: 'слева',
 	right: 'справа',
