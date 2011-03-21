@@ -1,0 +1,11 @@
+.imperavi-pagination{:style=>"width:850px"}
+  - @imperavi_assets.each do |a|
+    .thumb_image{:style=>"float: left; margin: 2px;"}
+      = image_tag a.file.url(:thumb)
+      %ul
+        - @file_styles.each do |fs|
+          %li
+            %a.pick-image{:href=>a.file.url(fs)}
+              = fs
+  %div{:style=>"clear:both"}
+  = will_paginate @imperavi_assets, :class => 'pagination ajax', :params => {:action => 'paginate'}

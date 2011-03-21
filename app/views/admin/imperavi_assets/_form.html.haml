@@ -5,12 +5,12 @@
         = f.file_field :file
       %td
         = f.select :file_style, @file_styles
-
     %tr
       %td.small{:colspan => "4"}
         \%RLANG.image_web_link%
         %p
           %input#redactor_file_link{:name => "redactor_file_link", :size => "40"}/
+          %input.overlay_trigger{:type=>'button', :value=>'...', :rel => '#imperavi_file_browser'}
     %tr
       %td.small{:nowrap => ""} %RLANG.title%
       %td
@@ -22,7 +22,14 @@
           %option{:value => "0"} %RLANG.none%
           %option{:value => "left"} %RLANG.left%
           %option{:value => "right"} %RLANG.right%
+  .overlay#imperavi_file_browser
+    = render 'paginate'
+  :javascript
+    $(function(){
+      $(".overlay_trigger").overlay();
+    })
   %p
+    \&nbsp;&nbsp;
     %input#redactorUploadBtn{:name => "upload", :type => "button", :value => "%RLANG.insert%"}>/
     \&nbsp;&nbsp;
     %input{:name => "", :onclick => "RedactorActive.modalClose();", :type => "button", :value => "%RLANG.cancel%"}/

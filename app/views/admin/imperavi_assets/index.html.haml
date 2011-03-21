@@ -1,4 +1,7 @@
 - @imperavi_assets.each do |a|
-  = image_tag a.file.url(:thumb)
-  = form_tag admin_imperavi_asset_destroy_url(:id => a, :return => :list) do
-    = submit_tag t('destroy'), :class => 'destroy'
+  %div{:style=>"float: left; padding:2px"}
+    %a{:href=>url_for(admin_imperavi_asset_path(a))}
+      = image_tag a.file.url(:thumb)
+    = form_tag admin_imperavi_asset_destroy_url(:id => a, :return => :list) do
+      = submit_tag t('destroy'), :class => 'destroy'
+%div{:clear=>"both"}
