@@ -15,8 +15,8 @@ body .imp_redactor_frame {
 body .imp_redactor_box textarea {
 	overflow: auto !important;
 	border: none !important;
-	/* border-color: #fff; */
-	/* width: 99.8% !important; */
+	// border-color: #fff;
+	// width: 99.8% !important;
 	font-size: 13px !important;
 }
 
@@ -167,8 +167,8 @@ body .imp_redactor_toolbar li a.imp_btn_cut			 { background-position: -1080px; }
 	color: #000;
 }
 #redactor_imp_modal_header {
-	padding: 30px 40px;
-	font-size: 24px;
+	padding: 5px 40px;
+	font-size: 16px;
 }
 #redactor_imp_modal_inner {
 	padding: 0 40px 30px 40px;
