@@ -2,6 +2,17 @@ require 'spree_core'
 require 'spree_admin_redactor_hooks'
 
 module SpreeAdminRedactor
+  class Config
+    cattr_accessor :controller, :model_attributes
+    @@controller = /^admin\//
+    @@model_attributes = []
+
+    def self.model_attribute_by_name_selectors
+      model_attributes.map do |ma|
+        "textarea[name='#{ma[0]}[#{ma[1]}]']"
+      end
+    end
+  end
   class Engine < Rails::Engine
 
     config.autoload_paths += %W(#{config.root}/lib)
