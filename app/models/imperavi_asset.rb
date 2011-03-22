@@ -4,6 +4,8 @@ class ImperaviAsset < ActiveRecord::Base
 
   validates_attachment_presence :file
 
+  default_scope :order => 'created_at DESC'
+
   def self.per_page
     4
   end
