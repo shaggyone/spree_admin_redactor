@@ -1,4 +1,4 @@
-<% if SpreeAdminRedactor::Config.controller.match(params[:controller]) %>
+<% if SpreeAdminRedactor::Config.controllers.match(params[:controller]) %>
 
   <%= javascript_include_tag 'http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js' %>
   <%= javascript_include_tag '/redactor/redactor' %>

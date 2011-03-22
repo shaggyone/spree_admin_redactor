@@ -3,8 +3,8 @@ require 'spree_admin_redactor_hooks'
 
 module SpreeAdminRedactor
   class Config
-    cattr_accessor :controller, :model_attributes
-    @@controller = /^admin\//
+    cattr_accessor :controllers, :model_attributes
+    @@controllers = /^admin\//
     @@model_attributes = []
 
     def self.model_attribute_by_name_selectors
