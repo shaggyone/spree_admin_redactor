@@ -11,19 +11,23 @@ Works with Spree-0.30+
 
 Just include gem in your Gemfile:
 
-  gem 'spree_admin_redactor', :git => 'git://github.com/x2es/spree_admin_redactor.git' 
+  gem 'spree_admin_redactor', :git => 'git://github.com/shaggyone/spree_admin_redactor.git' 
 
 And install assets (from your app):
 
   rake spree_admin_redactor:install:assets
 
-=== Excluding an actions
-
-If you want to disable admin_redactor for some action, then you can define constant like
-
-   ADMIN_REDACTOR_EXCLUDES = [{:controller => 'admin/products', :action => 'edit'}]
-
-(this was fast fix - this should be refactored in future)
+Configure controllers, and model attributes, for which you want to use the editor. For example put text,
+listed below to config/initializers/spree_admin_redactor.rb
+  
+  SpreeAdminRedactor::Config.class_eval do
+    self.controllers = /^admin\//
+    self.model_attributes = [
+      ["payment_method", "description"],
+      ["product", "description"],
+      ["news_article", "body"]
+    ]
+  end
 
 == Inspirited by
 
